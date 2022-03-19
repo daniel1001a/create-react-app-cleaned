@@ -2,7 +2,10 @@
 
 export const Colors = {
   Primary: "#FF4B69",
-  Secondary: "#1D3557",
+  Background:"#F4F4F4",
+  CardBackground:"#FFF",
+  Gray: "#868687",
+  GrayBorder:"#E7E7E8"
 };
 
 const BreakPoints = {
