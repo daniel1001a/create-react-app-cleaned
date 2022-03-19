@@ -1,26 +1,39 @@
 import styled from "styled-components";
 import { Colors } from "./assets/Theme";
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from "./assets/components/Navbar";
+import Contact from './assets/components/Contact';
+import About from './assets/components/About';
+import Home from './assets/components/Home';
+
+import NavigationBar from './assets/components/Navigation';
 
 const AppEl = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction:column;
+  position:absolute;
+  left:0;
+  top:0;
+  width:100vw;
+  overflow:hidden;
   height: 100vh;
 `;
 
-const Title = styled.h1`
-  color: ${Colors.Primary};
-  border: 2px solid ${Colors.Primary};
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+const Pages = styled.div`
+  flex:1;
+  display:flex;
+  overflow:hidden;
 `;
 
 function App() {
   return (
-    <AppEl>
-      <Title>Go ahead and start!</Title>
-    </AppEl>
-  );
+  <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' exact component={Home} />
+          <Route path='/about' component={About} />
+        </Routes>
+  </Router>)
 }
 
 export default App;
